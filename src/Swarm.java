@@ -60,7 +60,7 @@ public class Swarm {
             if (calcFitness(particles[i].x) < calcFitness(particles[i].lb)) {
                 particles[i].lb = particles[i].x;
             }
-            if (calcFitness(particles[i].x) < gb) {
+            if (calcFitness(particles[i].x) < calcFitness(gb)) {
                 gb = particles[i].x;
             }
 

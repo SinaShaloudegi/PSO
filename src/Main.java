@@ -16,7 +16,7 @@ public class Main {
     }
 
     private static void start() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             swarm.calculateFitness();
             swarm.updateV();
             swarm.updateX();
@@ -28,12 +28,7 @@ public class Main {
     private static void initialize() {
         swarm = new Swarm();
         swarm.init();
-     /*   for (int i = 0; i < swarm.particles.length; i++) {
-            System.out.println(" x : " + swarm.particles[i].x
-                    + " lb : " + swarm.particles[i].lb
-                    + " v : " + swarm.particles[i].v);
 
-        }*/
     }
 
 
