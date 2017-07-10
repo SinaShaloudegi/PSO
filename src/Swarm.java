@@ -10,6 +10,9 @@ public class Swarm {
 
     public void init() {
         particles = new Particle[100];
+        double temp =
+        gb = Double.MAX_VALUE;
+
         for (int i = 0; i < particles.length; i++) {
             Random r = new Random();
             double rnd = r.nextDouble();
@@ -17,9 +20,12 @@ public class Swarm {
             particles[i].x = -4 + rnd * 8;
             particles[i].lb = particles[i].x;
             particles[i].v = rnd;
+            if (particles[i].fitness < temp) {
+                temp = particles[i].fitness;
+                gb = particles[i].lb;
 
+            }
         }
-        gb = Double.MAX_VALUE;
     }
 
 
@@ -28,17 +34,12 @@ public class Swarm {
     }
 
     public void calculateFitness() {
-        double temp = gb;
         for (int i = 0; i < particles.length; i++) {
             particles[i].fitness = calcFitness(particles[i].x);
 /*
             System.out.println("Fitness #" + i + " : " + particles[i].fitness);
 */
-            if (particles[i].fitness < temp) {
-                temp = particles[i].fitness;
-                gb = particles[i].lb;
 
-            }
         }
 
     }
@@ -62,6 +63,7 @@ public class Swarm {
             }
             if (calcFitness(particles[i].x) < calcFitness(gb)) {
                 gb = particles[i].x;
+
             }
 
         }
