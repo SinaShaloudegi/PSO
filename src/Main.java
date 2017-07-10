@@ -9,25 +9,31 @@ public class Main {
     public static void main(String[] args) {
 
 
-        initilize();
+        initialize();
         start();
+        System.out.println("Global best : "+swarm.gb);
+
     }
 
     private static void start() {
         for (int i = 0; i < 10; i++) {
             swarm.calculateFitness();
+            swarm.updateV();
+            swarm.updateX();
+            System.out.println(swarm.gb);
         }
+
     }
 
-    private static void initilize() {
+    private static void initialize() {
         swarm = new Swarm();
         swarm.init();
-        for (int i = 0; i < swarm.particles.length; i++) {
+     /*   for (int i = 0; i < swarm.particles.length; i++) {
             System.out.println(" x : " + swarm.particles[i].x
                     + " lb : " + swarm.particles[i].lb
                     + " v : " + swarm.particles[i].v);
 
-        }
+        }*/
     }
 
 
