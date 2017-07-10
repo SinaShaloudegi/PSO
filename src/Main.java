@@ -16,11 +16,11 @@ public class Main {
     }
 
     private static void start() {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             swarm.calculateFitness();
             swarm.updateV();
             swarm.updateX();
-            System.out.println(swarm.gb);
+            System.out.println("gb"+i+": "+swarm.gb);
         }
 
     }

@@ -10,8 +10,7 @@ public class Swarm {
 
     public void init() {
         particles = new Particle[100];
-        double temp =
-        gb = Double.MAX_VALUE;
+        double temp = Double.MAX_VALUE;
 
         for (int i = 0; i < particles.length; i++) {
             Random r = new Random();
@@ -62,6 +61,7 @@ public class Swarm {
                 particles[i].lb = particles[i].x;
             }
             if (calcFitness(particles[i].x) < calcFitness(gb)) {
+                System.out.println("x: "+calcFitness(particles[i].x)+"  gb: "+calcFitness(gb));
                 gb = particles[i].x;
 
             }
